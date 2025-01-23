@@ -1,27 +1,62 @@
-# Frontend
+# EduConnect Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.2.
+EduConnect is an open platform designed to help students in public secondary schools across Africa get quick answers to their study questions. This frontend, built with Angular, interacts with the backend API to provide a seamless user experience.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- User Authentication: Students can log in and register.
+- Question Management: Students can post, view, and search for questions.
+- Answer Interaction: Students can answer questions and upvote helpful answers.
+- Navigation: Easy navigation through different sections of the application.
 
-## Code scaffolding
+## Technologies Used
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular
+- Angular CLI
+- TypeScript
+- HTML5/CSS3
+- RxJS
 
-## Build
+## Prerequisites
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Node.js
+- Angular CLI
+- EduConnect Backend API (running locally or accessible via URL)
 
-## Running unit tests
+## Installation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Clone the repository:
 
-## Running end-to-end tests
+```
+git clone
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- cd educonnect-frontend
+- Install dependencies:
 
-## Further help
+```
+npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Update environment settings:
+- Open src/environments/environment.ts: Set the API base URL to match your backend setup:
+
+```export const environment = {
+production: false,
+apiUrl: 'http://localhost:8000/api' // Adjust the base URL as needed
+};
+```
+
+- Run the development server:
+
+```
+ng serve
+```
+
+## Usage
+
+- Register or log in to access the platform.
+- Post questions: Click on "Ask a Question" and fill out the form.
+- Browse questions: Navigate through different subjects to find interesting questions.
+- Answer questions: Click on a question and provide your answer.
+- Upvote helpful answers to encourage quality contributions.

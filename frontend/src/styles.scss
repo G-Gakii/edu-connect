@@ -1,0 +1,89 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "./variables.scss";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $main-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+h1 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+button {
+  background-color: $main-color;
+  color: $white-smoke;
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  margin: 1rem 0;
+  font-size: 1rem;
+}
+div {
+  margin: 0.8rem 0;
+}
+input {
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  margin-top: 5px;
+}
+label {
+  font-size: 1.2rem;
+}
+
+::placeholder {
+  font-size: 1rem;
+}
+a {
+  color: blue;
+  text-decoration: none;
+  transition: font-size 1s;
+}
+a:visited,
+a:focus {
+  text-decoration: underline;
+  color: purple;
+}
+a:hover {
+  font-size: 1.5rem;
+  text-decoration: underline;
+}
+.account_container {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 3px;
+}
+
+form {
+  background-color: $white-smoke;
+  padding: 2rem;
+  border-radius: 1rem;
+  min-width: 500px;
+}
+select,
+textarea {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}

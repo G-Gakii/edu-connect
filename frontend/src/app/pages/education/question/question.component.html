@@ -1,0 +1,38 @@
+<div class="question_container">
+  <form action="" [formGroup]="questionForm" (submit)="askQuestion()">
+    @if(questionerror){
+    <p class="error">{{ questionerror }}</p>
+    }
+    <h1>Ask a question</h1>
+    <select name="category" id="category" formControlName="category">
+      <option value="" disabled selected>Choose category</option>
+      <option value="MATH">Math</option>
+      <option value="SCIENCE">Science</option>
+      <option value="HUMANITIES">Humanities</option>
+      <option value="LANGUAGES">Languages</option>
+      <option value="ART">Art</option>
+      <option value="TECH">Tech</option>
+    </select>
+    @if (questionForm.get('category')?.hasError('required') &&
+    questionForm.get('category')?.touched) {
+    <p class="error">Category required</p>
+    }
+    <div>
+      <textarea
+        name="question"
+        id="question"
+        cols="30"
+        rows="10"
+        placeholder="What do you want to ask"
+        formControlName="Question"
+      ></textarea>
+      @if (questionForm.get('Question')?.hasError('required') &&
+      questionForm.get('Question')?.touched) {
+      <p class="error">question required</p>
+      }
+    </div>
+    <button type="submit">
+      @if(isedit){ Edit question } @else{ Ask question }
+    </button>
+  </form>
+</div>

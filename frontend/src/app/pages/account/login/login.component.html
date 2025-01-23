@@ -1,0 +1,42 @@
+<div class="account_container">
+  <form action="" [formGroup]="loginForm" (submit)="loginUser()">
+    <h1>Signin</h1>
+    <div>
+      <label for="username">Username</label><br />
+      <input
+        type="text"
+        name="username"
+        id="username"
+        placeholder="e.g jane doe"
+        formControlName="username"
+      />
+      @if (loginForm.get('username')?.hasError('required')&&
+      loginForm.get('username')?.touched) {
+      <p class="error">Username required</p>
+      }
+    </div>
+
+    <div>
+      <label for="password">Password</label><br />
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Create password"
+        formControlName="password"
+      />
+      @if (loginForm.get('password')?.hasError('required')&&
+      loginForm.get('password')?.touched) {
+      <p class="error">Password required</p>
+      }
+    </div>
+
+    <button>Login Now</button>
+    <p class="login">Don't have an account <a href="">register</a></p>
+  </form>
+  <div class="register_welcome">
+    <h2>Welcome</h2>
+    <h2>To</h2>
+    <h2>Educonnect</h2>
+  </div>
+</div>

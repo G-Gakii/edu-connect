@@ -1,0 +1,86 @@
+@import "../../../variables.scss";
+
+.main_container {
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    button {
+      max-width: 9rem;
+    }
+    input {
+      padding: 1.1rem;
+    }
+  }
+}
+.question_container {
+  padding: 1rem;
+  min-width: 500px;
+  .questions {
+    background-color: $white-smoke;
+    padding: 1rem;
+    border-radius: 0.8rem;
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .delete {
+        margin-left: 0.8rem;
+      }
+    }
+  }
+}
+.name {
+  color: $main-color;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+.btn-answer {
+  display: flex;
+  gap: 3rem;
+  .btn {
+    background-color: transparent;
+    border: 1px solid $main-color;
+    color: black;
+    justify-content: center;
+    gap: 0.3rem;
+  }
+}
+button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  svg.up {
+    color: $white-smoke;
+  }
+}
+.about {
+  display: flex;
+  justify-content: space-between;
+}
+.myanswer {
+  box-shadow: 1px 1px 1px 1px gray;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+
+  margin: 1rem 0;
+}
+.thumb_up {
+  display: flex;
+  align-items: center;
+
+  gap: 0.3rem;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  svg.delete {
+    margin-left: 0.8rem;
+  }
+}

@@ -1,0 +1,16 @@
+<form action="" [formGroup]="answerForm" (click)="myAnswer()">
+  <h1>{{ question }}</h1>
+  <textarea
+    name="answer"
+    id="answer"
+    placeholder="Write your answer"
+    cols="30"
+    rows="10"
+    formControlName="answer"
+  ></textarea>
+  @if(answerForm.get('answer')?.hasError("required") &&
+  answerForm.get("answer")?.touched){
+  <p class="error">Answer required</p>
+  }
+  <button type="submit">@if(isEdit){Edit Answer} @else {Answer}</button>
+</form>

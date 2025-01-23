@@ -1,2 +1,2 @@
-- frontend ![frontend readme](https://github.com/G-Gakii/edu-connect/blob/main/frontend/README.md)
-- backend ![backend readme](https://github.com/G-Gakii/edu-connect/blob/main/eduConnect/readme.md)
+- frontend (https://github.com/G-Gakii/edu-connect/blob/main/frontend/README.md)
+- backend (https://github.com/G-Gakii/edu-connect/blob/main/eduConnect/readme.md)

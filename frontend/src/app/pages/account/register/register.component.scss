@@ -19,3 +19,20 @@
     }
   }
 }
+
+@media screen and (max-width: 800px) {
+  .account_container {
+    .register_welcome {
+      order: -1;
+      display: flex;
+      gap: 0.5rem;
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .account_container {
+    .register_welcome {
+      display: none;
+    }
+  }
+}

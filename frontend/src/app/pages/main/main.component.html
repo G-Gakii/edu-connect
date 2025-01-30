@@ -65,13 +65,12 @@
           </svg>
         </button>
 
-        <button>
+        <button (click)="showAnswerfn($index)">
           View Answers
 
           <svg
             height="1.5rem"
             [ngClass]="{ up: question.showAnswer, down: !question.showAnswer }"
-            (click)="showAnswerfn($index)"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
             fill="#FFFFFF"

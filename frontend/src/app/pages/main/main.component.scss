@@ -1,8 +1,11 @@
 @import "../../../variables.scss";
 
 .main_container {
+  padding: 0.5rem;
+
   .header {
     display: flex;
+
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
@@ -15,8 +18,7 @@
   }
 }
 .question_container {
-  padding: 1rem;
-  min-width: 500px;
+  min-width: 650px;
   .questions {
     background-color: $white-smoke;
     padding: 1rem;
@@ -42,7 +44,7 @@
 }
 .btn-answer {
   display: flex;
-  gap: 3rem;
+  gap: 1rem;
   .btn {
     background-color: transparent;
     border: 1px solid $main-color;
@@ -82,5 +84,34 @@ button {
   justify-content: space-between;
   svg.delete {
     margin-left: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .main_container {
+    max-width: 310px;
+    .header {
+      flex-wrap: wrap;
+    }
+  }
+  .question_container {
+    min-width: 300px;
+    .questions {
+      max-width: 290px;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .main_container {
+    max-width: 450px;
+    .header {
+      flex-wrap: wrap;
+    }
+  }
+  .question_container {
+    .questions {
+      max-width: 430px;
+    }
   }
 }

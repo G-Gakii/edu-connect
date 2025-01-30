@@ -40,7 +40,7 @@ export class QuestionComponent {
           .editQuestion(this.questionId, this.questionForm.value)
           .subscribe({
             next: (res) => {
-              console.log(res), this.router.navigate(['/main']);
+              console.log(res), this.router.navigate(['/']);
               this.questionForm.reset();
             },
             error: (err) => {
@@ -51,7 +51,7 @@ export class QuestionComponent {
       } else {
         this.educationService.askQuestion(this.questionForm.value).subscribe({
           next: (res) => {
-            console.log(res), this.router.navigate(['/main']);
+            console.log(res), this.router.navigate(['']);
             this.questionForm.reset();
           },
         });

@@ -47,7 +47,7 @@ export class AnswerComponent {
           .editAnswer(this.id, this.answerForm.value)
           .subscribe({
             next: (res) => {
-              console.log(res), this.router.navigate(['/main']);
+              console.log(res), this.router.navigate(['']);
             },
           });
       } else {
@@ -56,7 +56,7 @@ export class AnswerComponent {
           .subscribe({
             next: (res) => {
               console.log(res), this.answerForm.reset();
-              this.router.navigate(['/main']);
+              this.router.navigate(['']);
             },
           });
       }

@@ -3,7 +3,7 @@
     @if(questionerror){
     <p class="error">{{ questionerror }}</p>
     }
-    <h1>Ask a question</h1>
+    <h1>@if (isedit) { Edit Question } @else {Ask a question}</h1>
     <select name="category" id="category" formControlName="category">
       <option value="" disabled selected>Choose category</option>
       <option value="MATH">Math</option>
@@ -25,6 +25,7 @@
         rows="10"
         placeholder="What do you want to ask"
         formControlName="Question"
+        maxlength="200"
       ></textarea>
       @if (questionForm.get('Question')?.hasError('required') &&
       questionForm.get('Question')?.touched) {

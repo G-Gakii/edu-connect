@@ -38,7 +38,7 @@ export class LoginComponent {
           console.log(res);
 
           this.loginForm.reset;
-          this.router.navigate(['/main']);
+          this.router.navigate(['']);
         },
       });
     }

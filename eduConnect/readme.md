@@ -68,7 +68,8 @@ EduConnect is an open platform designed to help students in public secondary sch
 
 ### Quiz Endpoints
 
-- `GET	/quiz/` : Retrieve a list of quiz questions.
+    - `GET	/quiz/` : Retrieve a list of quiz questions.
+    - Response
 
 ```
 [
@@ -91,9 +92,10 @@ EduConnect is an open platform designed to help students in public secondary sch
 
 - `GET	/quiz/<int:pk>/` :Retrieve details of a specific question.
 - `POST	/quiz/` : Add question
-- Request Headers:
-  `Authorization: Token your-auth-token`
-- Request Body
+
+  - Request Headers:
+    `Authorization: Token your-auth-token`
+  - Request Body
 
   ```
   {
@@ -105,23 +107,24 @@ EduConnect is an open platform designed to help students in public secondary sch
 
 }```
 
-- Response:
+    - Response:
 
-  ````{
-    "id": 18,
-    "category": "ART",
-    "Question": "What is the best soil for modelling",
-    "student_name": "bii",
-    "created_at": "2025-03-11T06:42:10.074391Z",
-    "answer": []
-  }```
+````{
+  "id": 18,
+  "category": "ART",
+  "Question": "What is the best soil for modelling",
+  "student_name": "bii",
+  "created_at": "2025-03-11T06:42:10.074391Z",
+  "answer": []
+}```
 
-  ````
+````
 
 - `PUT /quiz/<int:pk>/` : Update an existing question (Only by the author).
-- Request Headers:
-- `Authorization: Token your-auth-token`
-- Request Body
+
+  - Request Headers:
+  - `Authorization: Token your-auth-token`
+  - Request Body
 
   ```
   {
@@ -144,31 +147,33 @@ EduConnect is an open platform designed to help students in public secondary sch
   }```
   ````
 - `DELETE	/quiz/<int:pk>/`: Delete an question (Only by the author).
-- Request Headers:
-  `Authorization: Token your-auth-token`
-- Response
-- `Question deleted successfully`
+  - Request Headers:
+    `Authorization: Token your-auth-token`
+  - Response
+  - `Question deleted successfully`
 
 `POST	/quiz/<int:pk>/answer-create/` : Submit an answer for a specific question.
 
 - Request Headers:
-- `Authorization: Token your-auth-token`
+   - `Authorization: Token your-auth-token`
+
 - Request Body
 
-  ```
-  {
-    "answer":"kilogram"
+```
+{
+  "answer":"kilogram"
 
-  ```
+```
 
 }```
 
 ### Answer Endpoints
 
 - `PUT /answer/<int:pk>/` : Update an existing answer (Only by the respondent).
-- Request Headers:
-  `Authorization: Token your-auth-token`
-- Request Body
+
+  - Request Headers:
+    `Authorization: Token your-auth-token`
+       - Request Body
 
   ```
   {
@@ -198,7 +203,7 @@ EduConnect is an open platform designed to help students in public secondary sch
   }
   ```
 
-- Response:
+  - Response:
 
   ```
   {
@@ -206,7 +211,8 @@ EduConnect is an open platform designed to help students in public secondary sch
   }
   ```
 
-  - `POST	/account/register/` :Register a new user.
+- `POST	/account/register/` :Register a new user.
+
   - Request Body
 
   ```

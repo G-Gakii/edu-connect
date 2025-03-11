@@ -64,11 +64,11 @@ EduConnect is an open platform designed to help students in public secondary sch
 
 ## Endpoints
 
-`base`: http://127.0.0.1:8000/question
+- `base`: http://127.0.0.1:8000/question
 
 ### Quiz Endpoints
 
-`GET	/quiz/` : Retrieve a list of quiz questions.
+- `GET	/quiz/` : Retrieve a list of quiz questions.
 
 ```
 [
@@ -89,19 +89,104 @@ EduConnect is an open platform designed to help students in public secondary sch
     },]
 ```
 
-`GET	/quiz/<int:pk>/` :Retrieve details of a specific question.
-`PUT / /answer/<int:pk>/` : Update an existing answer (Only by the respondent).
-`DELETE	/answer/<int:pk>/`: Delete an answer (Only by the respondent).
+- `GET	/quiz/<int:pk>/` :Retrieve details of a specific question.
+- `POST	/quiz/` : Add question
+- Request Headers:
+  `Authorization: Token your-auth-token`
+- Request Body
+
+  ```
+  {
+
+    "category":"ART",
+    "Question":"What is the best soil for modelling"
+
+  ```
+
+}```
+
+- Response:
+
+  ````{
+    "id": 18,
+    "category": "ART",
+    "Question": "What is the best soil for modelling",
+    "student_name": "bii",
+    "created_at": "2025-03-11T06:42:10.074391Z",
+    "answer": []
+  }```
+
+  ````
+
+- `PUT /quiz/<int:pk>/` : Update an existing question (Only by the author).
+- Request Headers:
+- `Authorization: Token your-auth-token`
+- Request Body
+
+  ```
+  {
+
+    "category":"ART",
+    "Question":"What is the best soil for modelling"
+
+  ```
+
+}```
+
+- Response:
+  ````{
+    "id": 18,
+    "category": "ART",
+    "Question": "What is the best soil for modelling",
+    "student_name": "bii",
+    "created_at": "2025-03-11T06:42:10.074391Z",
+    "answer": []
+  }```
+  ````
+- `DELETE	/quiz/<int:pk>/`: Delete an question (Only by the author).
+- Request Headers:
+  `Authorization: Token your-auth-token`
+- Response
+- `Question deleted successfully`
+
 `POST	/quiz/<int:pk>/answer-create/` : Submit an answer for a specific question.
+
+- Request Headers:
+- `Authorization: Token your-auth-token`
+- Request Body
+
+  ```
+  {
+    "answer":"kilogram"
+
+  ```
+
+}```
 
 ### Answer Endpoints
 
-`GET	/answer/<int:pk>/`: Retrieve details of a specific answer.
-`POST	/answer/<int:pk>/thumb-up/`: Upvote (like) an answer.
+- `PUT /answer/<int:pk>/` : Update an existing answer (Only by the respondent).
+- Request Headers:
+  `Authorization: Token your-auth-token`
+- Request Body
+
+  ```
+  {
+    "answer":"kilogram"
+
+  ```
+
+}```
+
+- `POST	/answer/<int:pk>/thumb-up/`: Upvote (like) an answer.
+
+- `DELETE	/answer/<int:pk>/`: Delete an answer (Only by the respondent).
+- Request Headers:
+  `Authorization: Token your-auth-token`
 
 ## User Account
 
-`POST	/account/login/`: Authenticate a user and return an auth token.
+- `POST	/account/login/`: Authenticate a user and return an auth token.
 
 - Request Body
 
@@ -114,10 +199,26 @@ EduConnect is an open platform designed to help students in public secondary sch
   ```
 
 - Response:
+
   ```
   {
     "token": "225a1e2db66594d375766e1bf2ba9cb5c9d0b9c6"
   }
   ```
-  `POST	/register/` :Register a new user.
-  `POST	/logout/`: Logout a user (invalidate auth token).
+
+  - `POST	/account/register/` :Register a new user.
+  - Request Body
+
+  ```
+  {
+    "username":"fuu",
+    "email":":"fuu@example.com"
+    "password":"Fuu@12345"
+     "password2":"Fuu@12345"
+
+  }
+  ```
+
+  - `POST	/account/logout/`: Logout a user (invalidate auth token).
+  - Request Headers:
+  - `Authorization: Token your-auth-token`

@@ -68,8 +68,8 @@ EduConnect is an open platform designed to help students in public secondary sch
 
 ### Quiz Endpoints
 
-    - `GET	/quiz/` : Retrieve a list of quiz questions.
-    - Response
+- `GET	/quiz/` : Retrieve a list of quiz questions.
+  - Response
 
 ```
 [
@@ -136,16 +136,18 @@ EduConnect is an open platform designed to help students in public secondary sch
 
 }```
 
-- Response:
-  ````{
-    "id": 18,
-    "category": "ART",
-    "Question": "What is the best soil for modelling",
-    "student_name": "bii",
-    "created_at": "2025-03-11T06:42:10.074391Z",
-    "answer": []
-  }```
-  ````
+    - Response:
+
+````{
+  "id": 18,
+  "category": "ART",
+  "Question": "What is the best soil for modelling",
+  "student_name": "bii",
+  "created_at": "2025-03-11T06:42:10.074391Z",
+  "answer": []
+}```
+````
+
 - `DELETE	/quiz/<int:pk>/`: Delete an question (Only by the author).
   - Request Headers:
     `Authorization: Token your-auth-token`
@@ -155,9 +157,9 @@ EduConnect is an open platform designed to help students in public secondary sch
 `POST	/quiz/<int:pk>/answer-create/` : Submit an answer for a specific question.
 
 - Request Headers:
-   - `Authorization: Token your-auth-token`
+     - `Authorization: Token your-auth-token`
 
-- Request Body
+      - Request Body
 
 ```
 {
@@ -186,14 +188,14 @@ EduConnect is an open platform designed to help students in public secondary sch
 - `POST	/answer/<int:pk>/thumb-up/`: Upvote (like) an answer.
 
 - `DELETE	/answer/<int:pk>/`: Delete an answer (Only by the respondent).
-- Request Headers:
-  `Authorization: Token your-auth-token`
+  - Request Headers:
+    `Authorization: Token your-auth-token`
 
 ## User Account
 
 - `POST	/account/login/`: Authenticate a user and return an auth token.
 
-- Request Body
+  - Request Body
 
   ```
   {
@@ -203,7 +205,7 @@ EduConnect is an open platform designed to help students in public secondary sch
   }
   ```
 
-  - Response:
+      - Response:
 
   ```
   {
@@ -225,6 +227,6 @@ EduConnect is an open platform designed to help students in public secondary sch
   }
   ```
 
-  - `POST	/account/logout/`: Logout a user (invalidate auth token).
+- `POST	/account/logout/`: Logout a user (invalidate auth token).
   - Request Headers:
   - `Authorization: Token your-auth-token`

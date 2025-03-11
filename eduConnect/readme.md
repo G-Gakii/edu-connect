@@ -63,3 +63,61 @@ EduConnect is an open platform designed to help students in public secondary sch
 - Upvote helpful answers
 
 ## Endpoints
+
+`base`: http://127.0.0.1:8000/question
+
+### Quiz Endpoints
+
+`GET	/quiz/` : Retrieve a list of quiz questions.
+
+```
+[
+    {
+        "id": 17,
+        "category": "TECH",
+        "Question": "What is machine learning",
+        "student_name": "foo",
+        "created_at": "2025-02-02T15:45:48.263868Z",
+        "answer": []
+    },{
+        "id": 8,
+        "category": "ART",
+        "Question": "where can get tutorial to learn pottery?",
+        "student_name": "foo",
+        "created_at": "2025-01-29T20:30:33.637097Z",
+        "answer": []
+    },]
+```
+
+`GET	/quiz/<int:pk>/` :Retrieve details of a specific question.
+`PUT / /answer/<int:pk>/` : Update an existing answer (Only by the respondent).
+`DELETE	/answer/<int:pk>/`: Delete an answer (Only by the respondent).
+`POST	/quiz/<int:pk>/answer-create/` : Submit an answer for a specific question.
+
+### Answer Endpoints
+
+`GET	/answer/<int:pk>/`: Retrieve details of a specific answer.
+`POST	/answer/<int:pk>/thumb-up/`: Upvote (like) an answer.
+
+## User Account
+
+`POST	/account/login/`: Authenticate a user and return an auth token.
+
+- Request Body
+
+  ```
+  {
+    "username":"fuu",
+    "password":"Fuu@12345"
+
+  }
+  ```
+
+- Response:
+  ```
+  {
+    "token": "225a1e2db66594d375766e1bf2ba9cb5c9d0b9c6"
+  }
+  ```
+  `POST	/register/` :Register a new user.
+  `POST	/logout/`: Logout a user (invalidate auth token).
